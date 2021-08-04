@@ -1,8 +1,73 @@
 @import url("https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-family: 'Bellota', cursive;
   color: #303030;
+  background-color: #0d8187;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.titleAndLogo {
   background-color: #FFFFFF;
-  text-align: center;
+  min-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+}
+
+.logoHackers {
+  height: 160px;
+  width: auto;
+  margin-left: 20px;
+}
+
+h1 {
+  margin-left: 10%;
+}
+
+form {
+  padding-top: 30px;
+  margin-bottom: auto;
+  font-weight: bold;
+}
+
+.inputLabel {
+  margin-left: 15px;
+}
+
+.genderp {
+  display: inline-block;
+}
+
+footer {
+  min-width: 100%;
+  color: #FFFFFF;
+  background-color: #303030;
+  position: absolute;
+  bottom: 0;
+  text-align: right;
+  padding-right: 20px;
 }
 /*# sourceMappingURL=style.css.map */
