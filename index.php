@@ -12,26 +12,26 @@
 
         <form>
             <div class="columns is-centered">
-                <div class="column">
+                <div class="column is-centered">
                     <p>Name</p>
                     <input name="name" type="text" placeholder="John">
                 </div>
 
-                <div class="column">
+                <div class="column is-centered">
                     <p>Lastname</p>
                     <input name="lastname" type="text" placeholder="Doe">
                 </div>
             </div>
 
             <div class="columns is-centered">
-                <div class="column">
+                <div class="column is-centered">
                     <p>Email address</p>
                     <input name="email" type="text" placeholder="e.g. johndoe@exemple.be">
                 </div>
             </div>
 
             <div class="columns is-centered">
-                <div class="column">
+                <div class="column is-centered">
                     <p>Gender</p>
                     <input type="radio" name="man">
                     <p>Man</p>
@@ -41,7 +41,7 @@
                     <p>Other</p>
                 </div>
 
-                <div class="column">
+                <div class="column is-centered">
                     <p>Country</p>
                     <select name="country">
                         <option value="default">Select a country</option>
@@ -58,7 +58,7 @@
             </div>
 
             <div class="columns is-centered">
-                <div class="column">
+                <div class="column is-centered">
                     <p>Subject</p>
                     <select name="subject">
                         <option>Other</option>
@@ -70,7 +70,7 @@
             </div>
 
             <div class="columns is-centered">
-                <div class="column">
+                <div class="column is-centered">
                     <p>Message</p>
                     <textarea name="message" placeholder="Write your message here"></textarea>
                 </div>
