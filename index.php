@@ -11,7 +11,7 @@
         <h1 class="title is-1">Contact support</h1>
 
         <form>
-            <div class="columns is-centered">
+            <div class="columns is-centered is-gapless">
                 <div class="column is-centered is-two-fifths">
                     <p>Name</p>
                     <input name="name" type="text" placeholder="John">
@@ -23,14 +23,14 @@
                 </div>
             </div>
 
-            <div class="columns is-centered">
+            <div class="columns is-centered is-gapless">
                 <div class="column is-two-fifths">
                     <p>Email address</p>
                     <input name="email" type="text" placeholder="e.g. johndoe@exemple.be">
                 </div>
             </div>
 
-            <div class="columns is-centered">
+            <div class="columns is-centered is-gapless">
                 <div class="column is-centered is-two-fifths">
                     <p>Gender</p>
                     <input type="radio" name="man">
@@ -41,7 +41,7 @@
                     <p>Other</p>
                 </div>
 
-                <div class="column is-centered is-two-fifths">
+                <div class="column is-centered is-two-fifths is-gapless">
                     <p>Country</p>
                     <select name="country">
                         <option value="default">Select a country</option>
@@ -57,7 +57,7 @@
                 </div>
             </div>
 
-            <div class="columns is-centered">
+            <div class="columns is-centered is-gapless">
                 <div class="column is-centered is-two-fifths">
                     <p>Subject</p>
                     <select name="subject">
@@ -69,7 +69,7 @@
                 </div>
             </div>
 
-            <div class="columns is-centered">
+            <div class="columns is-centered is-gapless">
                 <div class="column is-centered">
                     <p>Message</p>
                     <textarea name="message" placeholder="Write your message here"></textarea>
