@@ -12,12 +12,12 @@
 
         <form>
             <div class="columns is-centered is-gapless">
-                <div class="column is-centered is-two-fifths">
+                <div class="column is-centered is-one-fifth">
                     <p>Name</p>
                     <input name="name" type="text" placeholder="John">
                 </div>
 
-                <div class="column is-centered is-two-fifths">
+                <div class="column is-centered is-one-fifth">
                     <p>Lastname</p>
                     <input name="lastname" type="text" placeholder="Doe">
                 </div>
@@ -31,7 +31,7 @@
             </div>
 
             <div class="columns is-centered is-gapless">
-                <div class="column is-centered is-two-fifths">
+                <div class="column is-centered is-one-fifth">
                     <p>Gender</p>
                     <input type="radio" name="man">
                     <p>Man</p>
@@ -41,7 +41,7 @@
                     <p>Other</p>
                 </div>
 
-                <div class="column is-centered is-two-fifths is-gapless">
+                <div class="column is-centered is-one-fifth is-gapless">
                     <p>Country</p>
                     <select name="country">
                         <option value="default">Select a country</option>
@@ -58,7 +58,7 @@
             </div>
 
             <div class="columns is-centered is-gapless">
-                <div class="column is-centered is-two-fifths">
+                <div class="column is-centered is-one-fifth">
                     <p>Subject</p>
                     <select name="subject">
                         <option>Other</option>
