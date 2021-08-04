@@ -29,7 +29,7 @@
                     <input type="radio" name="woman">
                     <label for="woman">Woman</label>
                     <input type="radio" name="otherg">
-                    <label for="otherg">Other></label>
+                    <label for="otherg">Other</label>
                 </div>
                 <div>
                     <label for="country">Country</label>
@@ -59,5 +59,9 @@
                 <textarea name="message" placeholder="Write your message here"></textarea>
             </div>
         </form>
+
+        <footer>
+            <p>© Hackers poulette - 2017</p>
+        </footer>
     </body>
 </html>
