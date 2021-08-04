@@ -8,10 +8,10 @@
     </head>
 
     <body>
-        <h1 class="title is-1">Contact support</h1>
+        <h1 class="title is-1 is-centered">Contact support</h1>
 
         <form>
-            <div class="columns">
+            <div class="columns is-centered">
                 <div class="column">
                     <p>Name</p>
                     <input name="name" type="text" placeholder="John">
@@ -23,14 +23,14 @@
                 </div>
             </div>
 
-            <div class="columns">
+            <div class="columns is-centered">
                 <div class="column">
                     <p>Email address</p>
                     <input name="email" type="text" placeholder="e.g. johndoe@exemple.be">
                 </div>
             </div>
 
-            <div class="columns">
+            <div class="columns is-centered">
                 <div class="column">
                     <p>Gender</p>
                     <input type="radio" name="man">
@@ -57,7 +57,7 @@
                 </div>
             </div>
 
-            <div class="columns">
+            <div class="columns is-centered">
                 <div class="column">
                     <p>Subject</p>
                     <select name="subject">
@@ -69,7 +69,7 @@
                 </div>
             </div>
 
-            <div class="columns">
+            <div class="columns is-centered">
                 <div class="column">
                     <p>Message</p>
                     <textarea name="message" placeholder="Write your message here"></textarea>
