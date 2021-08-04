@@ -9,30 +9,30 @@
         <form>
             <div>
                 <div>
-                    <label for="name">Name</label>
+                    <p>Name</p>
                     <input name="name" type="text" placeholder="John">
                 </div>
                 <div>
-                    <label for="lastname">Lastname</label>
+                    <p>Lastname</p>
                     <input name="lastname" type="text" placeholder="Doe">
                 </div>
             </div>
             <div>
-                <label for="email">Email address</label>
+                <p>Email address</p>
                 <input name="email" type="text" placeholder="e.g. johndoe@exemple.be">
             </div>
             <div>
                 <div>
                     <p>Gender</p>
                     <input type="radio" name="man">
-                    <label for="man">Man</label>
+                    <p>Man</p>
                     <input type="radio" name="woman">
-                    <label for="woman">Woman</label>
+                    <p>Woman</p>
                     <input type="radio" name="otherg">
-                    <label for="otherg">Other</label>
+                    <p>Other</p>
                 </div>
                 <div>
-                    <label for="country">Country</label>
+                    <p>Country</p>
                     <select name="country">
                         <option value="default">Select a country</option>
                         <?php
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div>
-                <label for="subject">Subject</label>
+                <p>Subject</p>
                 <select name="subject">
                    <option>Other</option>
                    <option>Infos</option> 
@@ -56,7 +56,7 @@
                 </select>
             </div>
             <div>
-                <label for="message">Message</label>
+                <p>Message</p>
                 <textarea name="message" placeholder="Write your message here"></textarea>
             </div>
         </form>
