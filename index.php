@@ -33,15 +33,16 @@
                 </div>
                 <div>
                     <label for="country">Country</label>
-                    <select name="country" placeholder="Select a country">
-                    <?php
+                    <select name="country">
+                        <option value="default">Select a country</option>
+                        <?php
 
-                        require "countries.php";
-                        
-                        foreach($countries as $key => $value) {
-                            echo "<option value='$key'>$value</option>";
-                        }
-                    ?>
+                            require "countries.php";
+                            
+                            foreach($countries as $key => $value) {
+                                echo "<option value='$key'>$value</option>";
+                            }
+                        ?>
                     </select>
                 </div>
             </div>
