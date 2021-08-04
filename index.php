@@ -24,7 +24,7 @@
             </div>
 
             <div class="columns is-centered">
-                <div class="column is-three-fifths">
+                <div class="column is-two-fifths">
                     <p>Email address</p>
                     <input name="email" type="text" placeholder="e.g. johndoe@exemple.be">
                 </div>
