@@ -198,7 +198,9 @@ $errors = 0;
 
         <?php
         if(isset($_POST["submit"])) {
-            if (errors == 0) {
+            if ($errors == 0) {
+                ini_set("display_errors", 1);
+                error_reporting(E_ALL);
                 $from = "no-reply@test.com";
                 $to = $email;
                 $subject = "Checking PHP mail";
