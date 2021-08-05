@@ -14,7 +14,7 @@
         </div>
 
         <form>
-            <div class="columns is-centered is-gapless">
+            <div class="columns is-centered is-2">
                 <div class="column is-centered is-one-fifth">
                     <p class="inputLabel">Name</p>
                     <input class="input is-rounded" name="name" type="text" placeholder="John">
@@ -26,25 +26,31 @@
                 </div>
             </div>
 
-            <div class="columns is-centered is-gapless">
+            <div class="columns is-centered is-2">
                 <div class="column is-two-fifths">
                     <p class="inputLabel">Email address</p>
                     <input class="input is-rounded" name="email" type="text" placeholder="e.g. johndoe@exemple.be">
                 </div>
             </div>
 
-            <div class="columns is-centered is-gapless">
-                <div class="column is-centered is-one-fifth">
-                    <p class="genderp">Gender</p><br>
-                    <input type="radio" name="man">
-                    <p class="genderp">Man</p><br>
-                    <input type="radio" name="woman">
-                    <p class="genderp">Woman</p><br>
-                    <input type="radio" name="otherg">
-                    <p class="genderp">Other</p>
+            <div class="columns is-centered is-1">
+                <div class="control column is-centered is-one-fifth">
+                    <p>Gender</p>
+                    <label class="radio">
+                        <input type="radio" name="answer">
+                        Man
+                    </label><br>
+                    <label class="radio">
+                        <input type="radio" name="answer">
+                        Woman
+                    </label><br>
+                    <label class="radio">
+                        <input type="radio" name="answer">
+                        Other
+                    </label>
                 </div>
 
-                <div class="column is-centered is-one-fifth is-gapless">
+                <div class="column is-centered is-one-fifth">
                     <p>Country</p>
                     <div class="select is-rounded">
                         <select name="country">
@@ -62,10 +68,10 @@
                 </div>
             </div>
 
-            <div class="columns is-centered is-gapless">
+            <div class="columns is-centered is-2">
                 <div class="column is-centered is-two-fifths">
-                    <p>Subject</p>
-                    <div class="select is-rounded">
+                    <p>Subject of the message</p>
+                    <div class="select is-rounded is-fullwidth">
                         <select name="subject">
                             <option>Other</option>
                             <option>Infos</option> 
@@ -76,10 +82,15 @@
                 </div>
             </div>
 
-            <div class="columns is-centered is-gapless">
+            <div class="columns is-centered is-2">
                 <div class="column is-centered is-two-fifths">
                     <p>Message</p>
-                    <textarea class="textarea is-rounded" name="message" placeholder="Write your message here"></textarea>
+                    <textarea class="textarea is-rounded" name="message" placeholder="Write your message here" rows="2"></textarea>
+                </div>
+            </div>
+            <div class="columns is-centered is-2">
+                <div class="column is-centered is-two-fifths">
+                    <button class="button is-fullwidth">Send</button>
                 </div>
             </div>
         </form>
