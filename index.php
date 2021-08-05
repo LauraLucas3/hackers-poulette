@@ -1,3 +1,8 @@
+<?php
+$subject = isset($_POST['subject']) ? (int) $_POST['subject'] : 0;
+$country = isset($_POST['country']) ? (int) $_POST['country'] : 0;
+?>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -13,16 +18,52 @@
             <h1 class="title is-1">Contact support</h1>
         </div>
 
-        <form>
+        <form method="post">
             <div class="columns is-centered is-2">
                 <div class="column is-centered is-one-fifth">
                     <p class="inputLabel">Name</p>
                     <input class="input is-rounded" name="name" type="text" placeholder="John">
+                    <?php
+                        if(isset($_POST["submit"])) {
+                            $name = $_POST["name"];
+                            if ($name != "") {
+                                function clean($string) {
+                                    $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+                                 
+                                    return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+                                 }
+                                
+                                $name = filter_var($name, FILTER_SANITIZE_STRING);
+                                $name = clean($name);
+                                
+                                if ($name == "") {
+                                    echo '<p class="help is-white">Please enter a valid name</p>';
+                                }
+                            } else {
+                                echo '<p class="help is-white">Please enter your name</p>';
+                            }
+                        }
+                    ?>
                 </div>
 
                 <div class="column is-centered is-one-fifth">
                     <p class="inputLabel">Lastname</p>
                     <input class="input is-rounded" name="lastname" type="text" placeholder="Doe">
+                    <?php
+                        if(isset($_POST["submit"])) {
+                            $lastname = $_POST["lastname"];
+                            if ($lastname != "") {
+
+                                $lastname = filter_var($lastname, FILTER_SANITIZE_STRING);
+                                $lastname = clean($lastname);
+                                if ($lastname == "") {
+                                    echo '<p class="help is-white">Please enter a valid lastname</p>';
+                                }
+                            } else {
+                                echo '<p class="help is-white">Please enter your lastname</p>';
+                            }
+                        }
+                    ?>
                 </div>
             </div>
 
@@ -30,6 +71,22 @@
                 <div class="column is-two-fifths">
                     <p class="inputLabel">Email address</p>
                     <input class="input is-rounded" name="email" type="text" placeholder="e.g. johndoe@exemple.be">
+                    <?php
+                    if(isset($_POST["submit"])) {
+                        $email = $_POST["email"];
+                        if ($email != "") {
+                            $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+                            if ($email == "") {
+                                echo '<p class"help is-white">Please enter a valid email address</p>';
+                            }
+                            if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
+                                echo '<p class"help is-white">Please enter a valid email address</p>';
+                            }
+                        } else {
+                            echo '<p class="help is-white">Please enter your email address</p>';
+                        }
+                    } 
+                    ?>
                 </div>
             </div>
 
@@ -37,34 +94,59 @@
                 <div class="control column is-centered is-one-fifth">
                     <p>Gender</p>
                     <label class="radio">
-                        <input type="radio" name="answer">
+                        <input type="radio" name="gender">
                         Man
                     </label><br>
                     <label class="radio">
-                        <input type="radio" name="answer">
+                        <input type="radio" name="gender">
                         Woman
                     </label><br>
                     <label class="radio">
-                        <input type="radio" name="answer">
+                        <input type="radio" name="gender">
                         Other
                     </label>
+                    <?php
+                    if(isset($_POST["submit"])) {
+                        if (isset($_POST["gender"]) == false) {
+                            echo '<p class="help is-white">Please choose your gender</p>';
+                        }
+                    }
+                    ?>
                 </div>
 
                 <div class="column is-centered is-one-fifth">
                     <p>Country</p>
                     <div class="select is-rounded">
                         <select name="country">
-                            <option value="default" selected>Select a country</option>
+                            <option value="0" <?php if ($country === 0) { echo ' selected="selected"'; } ?>>Select a country</option>
                             <?php
 
                                 require "countries.php";
+                                $i = 1;
                                     
                                 foreach($countries as $key => $value) {
-                                    echo "<option value='$key'>$value</option>";
+                                    $countries[$i] = $countries[$key];
+                                    unset($countries[$key]);
+                                    echo "<option value='$i'";
+                                    if ($country === $i) { echo ' selected="selected"'; } 
+                                    echo ">$value</option>";
+                                    $i++;
                                 }
+
                             ?>
                         </select>
                     </div>
+                    <?php
+                        if(isset($_POST["submit"])) {
+                            $country = isset($_POST['country']) ? (int) $_POST['country'] : 0;
+                            if ($country == 0) {
+                                echo '<p class="help is-white">Please choose a country</p>';
+                            } else {
+                                $selectedCountry = $countries[$country];
+                            }
+
+                        }
+                    ?>
                 </div>
             </div>
 
@@ -73,10 +155,10 @@
                     <p>Subject of the message</p>
                     <div class="select is-rounded is-fullwidth">
                         <select name="subject">
-                            <option>Other</option>
-                            <option>Infos</option> 
-                            <option>Request</option> 
-                            <option>Joining us</option>
+                            <option value="0" <?php if ($subject === 0) { echo ' selected="selected"'; } ?>>Other</option>
+                            <option value="1" <?php if ($subject === 1) { echo ' selected="selected"'; } ?>>Infos</option> 
+                            <option value="2" <?php if ($subject === 2) { echo ' selected="selected"'; } ?>>Request</option> 
+                            <option value="3" <?php if ($subject === 3) { echo ' selected="selected"'; } ?>>Joining us</option>
                         </select>
                     </div>
                 </div>
@@ -85,12 +167,20 @@
             <div class="columns is-centered is-2">
                 <div class="column is-centered is-two-fifths">
                     <p>Message</p>
+                    <?php 
+                        if (isset($_POST["submit"])) { 
+                            $message = $_POST["message"]; 
+                            if ($message == "") {
+                                echo '<p class="help is-white">Please describe the subject of your message</p>';
+                            }
+                        } 
+                    ?>
                     <textarea class="textarea is-rounded" name="message" placeholder="Write your message here" rows="2"></textarea>
                 </div>
             </div>
             <div class="columns is-centered is-2">
                 <div class="column is-centered is-two-fifths">
-                    <button class="button is-fullwidth">Send</button>
+                    <input type="submit" class="input is-fullwidth" name="submit" value="Send">
                 </div>
             </div>
         </form>
