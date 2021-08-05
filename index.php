@@ -1,6 +1,7 @@
 <?php
 $subject = isset($_POST['subject']) ? (int) $_POST['subject'] : 0;
 $country = isset($_POST['country']) ? (int) $_POST['country'] : 0;
+$errors = 0;
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,9 +39,11 @@ $country = isset($_POST['country']) ? (int) $_POST['country'] : 0;
                                 
                                 if ($name == "") {
                                     echo '<p class="help is-white">Please enter a valid name</p>';
+                                    $errors ++;
                                 }
                             } else {
                                 echo '<p class="help is-white">Please enter your name</p>';
+                                $errors ++;
                             }
                         }
                     ?>
@@ -58,9 +61,11 @@ $country = isset($_POST['country']) ? (int) $_POST['country'] : 0;
                                 $lastname = clean($lastname);
                                 if ($lastname == "") {
                                     echo '<p class="help is-white">Please enter a valid lastname</p>';
+                                    $errors ++;
                                 }
                             } else {
                                 echo '<p class="help is-white">Please enter your lastname</p>';
+                                $errors ++;
                             }
                         }
                     ?>
@@ -78,12 +83,15 @@ $country = isset($_POST['country']) ? (int) $_POST['country'] : 0;
                             $email = filter_var($email, FILTER_SANITIZE_EMAIL);
                             if ($email == "") {
                                 echo '<p class"help is-white">Please enter a valid email address</p>';
+                                $errors ++;
                             }
                             if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
                                 echo '<p class"help is-white">Please enter a valid email address</p>';
+                                $errors ++;
                             }
                         } else {
                             echo '<p class="help is-white">Please enter your email address</p>';
+                            $errors ++;
                         }
                     } 
                     ?>
@@ -109,6 +117,7 @@ $country = isset($_POST['country']) ? (int) $_POST['country'] : 0;
                     if(isset($_POST["submit"])) {
                         if (isset($_POST["gender"]) == false) {
                             echo '<p class="help is-white">Please choose your gender</p>';
+                            $errors ++;
                         }
                     }
                     ?>
@@ -141,6 +150,7 @@ $country = isset($_POST['country']) ? (int) $_POST['country'] : 0;
                             $country = isset($_POST['country']) ? (int) $_POST['country'] : 0;
                             if ($country == 0) {
                                 echo '<p class="help is-white">Please choose a country</p>';
+                                $errors ++;
                             } else {
                                 $selectedCountry = $countries[$country];
                             }
@@ -172,6 +182,7 @@ $country = isset($_POST['country']) ? (int) $_POST['country'] : 0;
                             $message = $_POST["message"]; 
                             if ($message == "") {
                                 echo '<p class="help is-white">Please describe the subject of your message</p>';
+                                $errors ++;
                             }
                         } 
                     ?>
@@ -184,6 +195,20 @@ $country = isset($_POST['country']) ? (int) $_POST['country'] : 0;
                 </div>
             </div>
         </form>
+
+        <?php
+        if(isset($_POST["submit"])) {
+            if (errors == 0) {
+                $from = "no-reply@test.com";
+                $to = $email;
+                $subject = "Checking PHP mail";
+                $message = "PHP mail works just fine";
+                $headers = "From:".$from;
+                mail($to, $subject, $message, $headers);
+                echo "An email was sent, please check your mailbox";
+            }
+        }
+        ?>
 
         <footer>
             <p>© Hackers poulette - 2017</p>
