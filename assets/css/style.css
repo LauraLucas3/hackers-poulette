@@ -14,7 +14,7 @@ body {
           flex-direction: column;
   font-family: 'Bellota', cursive;
   color: #FFFFFF;
-  background-color: #0d8187;
+  background-color: #303030;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -69,5 +69,9 @@ footer {
       align-self: flex-end;
   text-align: right;
   padding-right: 20px;
+}
+
+.website {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

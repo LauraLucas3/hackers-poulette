@@ -204,9 +204,22 @@ $errors = 0;
             </div>
             <div class="columns is-centered is-2">
                 <div class="column is-centered is-two-fifths">
+                    <input id="website" class="website" name="website" type="text" value="">
+                    <script>
+                        $('form').submit(function(){    
+                                if ($('input#website').val().length != 0) {
+                                    return false;
+                                } 
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="columns is-centered is-2">
+                <div class="column is-centered is-two-fifths">
                     <input type="submit" class="input is-fullwidth" name="submit" value="Send">
                 </div>
             </div>
+            
         </form>
 
         <?php
